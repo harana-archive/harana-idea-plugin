@@ -1,0 +1,29 @@
+<idea-plugin version="2">
+    <id>harana.idea-plugin</id>
+    <name>Harana</name>
+    <version>1.3</version>
+    <vendor url="http://haranaframework.org/">Harana</vendor>
+
+    <description>Harana macro support for IntelliJ IDEA</description>
+
+    <idea-version since-build="143.0"/>
+
+    <depends>org.intellij.scala</depends>
+
+    <application-components>
+        <!-- TODO put your components here -->
+    </application-components>
+
+    <project-components>
+        <!-- TODO put your components here -->
+    </project-components>
+
+    <extensions defaultExtensionNs="org.intellij.scala">
+        <syntheticMemberInjector implementation="com.harana.idea.Injector"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- TODO put your extensions here -->
+    </extensions>
+
+</idea-plugin>
