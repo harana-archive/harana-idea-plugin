@@ -8,4 +8,4 @@ steps:
   - name: ":cloud: Publish to S3"
     command: >
      buildkite-agent artifact download target/scala-2.12/harana-idea-plugin*.jar . &&
-     aws s3 cp *.jar s3://deploy-buildkite-packages/harana-idea-plugin
+     aws s3 cp . s3://deploy-buildkite-packages/harana-idea-plugin --recursive --include "harana-idea*"
