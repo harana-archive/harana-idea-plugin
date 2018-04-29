@@ -1,10 +1,11 @@
 steps:
 
   - name: ":package: Package Plugin"
-    command: sbt package
-
-  - name: "test"
-    command: ls -alL
+    command: >
+     sbt package && 
+     buildkite-agent artifact upload target/scala-2.12/harana-idea-plugin*.jar
 
   - name: ":cloud: Publish to S3"
-    command: aws s3 cp target/scala-2.12/harana-idea-plugin*.jar s3://deploy-buildkite-packages/harana-idea-plugin
+    command: >
+     buildkite-agent artifact dowwnload target/scala-2.12/harana-idea-plugin*.jar . &&
+     aws s3 cp *.jar s3://deploy-buildkite-packages/harana-idea-plugin
