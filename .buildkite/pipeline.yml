@@ -1,6 +1,6 @@
 steps:
 
-  - name: ":build: Build Plugin"
+  - name: ":package: Package Plugin"
     command: sbt package
 
   - name: ":cloud: Publish to S3"
