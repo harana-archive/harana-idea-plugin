@@ -3,5 +3,8 @@ steps:
   - name: ":package: Package Plugin"
     command: sbt package
 
+  - name: "test"
+    command: ls -alL
+
   - name: ":cloud: Publish to S3"
     command: aws s3 cp target/scala-2.12/harana-idea-plugin*.jar s3://deploy-buildkite-packages/harana-idea-plugin
