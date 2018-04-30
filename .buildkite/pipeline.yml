@@ -1,9 +1,8 @@
 steps:
 
   - name: ":package: Package Plugin"
-    command: >
-     sbt package && 
-     buildkite-agent artifact upload target/scala-2.12/harana-idea-plugin*.jar
+    artifact_paths: target/scala-2.12/*
+    command: sbt package
 
   - name: ":cloud: Publish to S3"
     command: >
