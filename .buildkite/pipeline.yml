@@ -3,7 +3,9 @@ steps:
   - name: ":sbt: Build Package"
     artifact_paths: target/scala-2.12/*
     command: sbt package
-
+ 
+  - wait
+ 
   - name: ":cloud: Publish to S3"
     command: >
      buildkite-agent artifact download target/scala-2.12/harana-idea-plugin*.jar . &&
