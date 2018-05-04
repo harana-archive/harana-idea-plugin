@@ -1,6 +1,6 @@
 steps:
 
-  - name: ":package: Package Plugin"
+  - name: ":sbt: Build Package"
     artifact_paths: target/scala-2.12/*
     command: sbt package
 
